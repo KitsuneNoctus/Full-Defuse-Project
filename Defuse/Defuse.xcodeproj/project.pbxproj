@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F64FB5025A790BE00898DEC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64FB4F25A790BE00898DEC /* HomeViewController.swift */; };
+		3F64FB5325A7918F00898DEC /* FidgetToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64FB5225A7918F00898DEC /* FidgetToolViewController.swift */; };
+		3F64FB5625A791AE00898DEC /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64FB5525A791AE00898DEC /* EmotionViewController.swift */; };
+		3F64FB5925A7921700898DEC /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64FB5825A7921700898DEC /* NotesViewController.swift */; };
+		3F64FB5C25A7922E00898DEC /* HomeExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64FB5B25A7922E00898DEC /* HomeExtensionViewController.swift */; };
+		3F7D905223C3C3B3006F9972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D905123C3C3B3006F9972 /* AppDelegate.swift */; };
+		3F7D905423C3C3B3006F9972 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D905323C3C3B3006F9972 /* SceneDelegate.swift */; };
+		3F7D905623C3C3B3006F9972 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D905523C3C3B3006F9972 /* ViewController.swift */; };
+		3F7D905923C3C3B3006F9972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D905723C3C3B3006F9972 /* Main.storyboard */; };
+		3F7D905B23C3C3B5006F9972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D905A23C3C3B5006F9972 /* Assets.xcassets */; };
+		3F7D905E23C3C3B5006F9972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D905C23C3C3B5006F9972 /* LaunchScreen.storyboard */; };
+		3F7D906623C3DBF3006F9972 /* FidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D906523C3DBF3006F9972 /* FidgetViewController.swift */; };
+		3F7D906923C3EB7D006F9972 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D906823C3EB7D006F9972 /* AVFoundation.framework */; };
+		3F7D906B23C3ECEC006F9972 /* switchSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D906A23C3ECEC006F9972 /* switchSound.mp3 */; };
+		3F7D906D23C64F38006F9972 /* AnxietyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D906C23C64F38006F9972 /* AnxietyViewController.swift */; };
+		3F7D906F23C65F59006F9972 /* clickSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D906E23C65F58006F9972 /* clickSound.mp3 */; };
+		3F7D907123C6629C006F9972 /* crackSoud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D907023C6629C006F9972 /* crackSoud.mp3 */; };
+		3F7D907323C67D7B006F9972 /* KeySubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D907223C67D7B006F9972 /* KeySubViewController.swift */; };
+		3F7D907523C68203006F9972 /* BubbleSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D907423C68203006F9972 /* BubbleSubViewController.swift */; };
+		3F7D907823C68ABF006F9972 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D907723C68ABF006F9972 /* CircleImageView.swift */; };
+		3F7D907A23C69028006F9972 /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D907923C69028006F9972 /* BubbleButton.swift */; };
+		3F7D907C23C6A6C4006F9972 /* popishSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D907B23C6A6C4006F9972 /* popishSound.mp3 */; };
+		3F7D907E23C6FB47006F9972 /* AngerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D907D23C6FB47006F9972 /* AngerViewController.swift */; };
+		3F7D908023C7D590006F9972 /* calmUkulele.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D907F23C7D590006F9972 /* calmUkulele.mp3 */; };
+		3F7D90EF23C8403B006F9972 /* chillSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F7D90EE23C8403B006F9972 /* chillSong.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F64FB4725A78F0F00898DEC /* switchSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = switchSound.mp3; sourceTree = "<group>"; };
+		3F64FB4825A78F1600898DEC /* chillSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chillSong.mp3; sourceTree = "<group>"; };
+		3F64FB4925A78F1B00898DEC /* calmUkulele.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = calmUkulele.mp3; sourceTree = "<group>"; };
+		3F64FB4A25A78F3A00898DEC /* clickSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clickSound.mp3; sourceTree = "<group>"; };
+		3F64FB4B25A78F4800898DEC /* crackSoud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crackSoud.mp3; sourceTree = "<group>"; };
+		3F64FB4F25A790BE00898DEC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F64FB5225A7918F00898DEC /* FidgetToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidgetToolViewController.swift; sourceTree = "<group>"; };
+		3F64FB5525A791AE00898DEC /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
+		3F64FB5825A7921700898DEC /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		3F64FB5B25A7922E00898DEC /* HomeExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeExtensionViewController.swift; sourceTree = "<group>"; };
+		3F7D904E23C3C3B3006F9972 /* Defuse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defuse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F7D905123C3C3B3006F9972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F7D905323C3C3B3006F9972 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3F7D905523C3C3B3006F9972 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F7D905823C3C3B3006F9972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F7D905A23C3C3B5006F9972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F7D905D23C3C3B5006F9972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F7D905F23C3C3B5006F9972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7D906523C3DBF3006F9972 /* FidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidgetViewController.swift; sourceTree = "<group>"; };
+		3F7D906823C3EB7D006F9972 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3F7D906A23C3ECEC006F9972 /* switchSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = switchSound.mp3; path = ../../switchSound.mp3; sourceTree = "<group>"; };
+		3F7D906C23C64F38006F9972 /* AnxietyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnxietyViewController.swift; sourceTree = "<group>"; };
+		3F7D906E23C65F58006F9972 /* clickSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = clickSound.mp3; path = ../../../../../Downloads/clickSound.mp3; sourceTree = "<group>"; };
+		3F7D907023C6629C006F9972 /* crackSoud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = crackSoud.mp3; path = ../../../../../Downloads/crackSoud.mp3; sourceTree = "<group>"; };
+		3F7D907223C67D7B006F9972 /* KeySubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySubViewController.swift; sourceTree = "<group>"; };
+		3F7D907423C68203006F9972 /* BubbleSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSubViewController.swift; sourceTree = "<group>"; };
+		3F7D907723C68ABF006F9972 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		3F7D907923C69028006F9972 /* BubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
+		3F7D907B23C6A6C4006F9972 /* popishSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = popishSound.mp3; path = ../../../../../../Downloads/popishSound.mp3; sourceTree = "<group>"; };
+		3F7D907D23C6FB47006F9972 /* AngerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngerViewController.swift; sourceTree = "<group>"; };
+		3F7D907F23C7D590006F9972 /* calmUkulele.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = calmUkulele.mp3; path = ../../../../../Downloads/calmUkulele.mp3; sourceTree = "<group>"; };
+		3F7D90EE23C8403B006F9972 /* chillSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chillSong.mp3; path = ../../../../../Downloads/chillSong.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F7D904B23C3C3B3006F9972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F7D906923C3EB7D006F9972 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F64FB4425A78EF100898DEC /* Old Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F7D906523C3DBF3006F9972 /* FidgetViewController.swift */,
+				3F7D907D23C6FB47006F9972 /* AngerViewController.swift */,
+				3F7D907223C67D7B006F9972 /* KeySubViewController.swift */,
+				3F7D907423C68203006F9972 /* BubbleSubViewController.swift */,
+				3F7D906C23C64F38006F9972 /* AnxietyViewController.swift */,
+			);
+			path = "Old Controllers";
+			sourceTree = "<group>";
+		};
+		3F64FB4525A78EFD00898DEC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F64FB6025A7937300898DEC /* Cells */,
+				3F64FB5E25A7923300898DEC /* SubViews */,
+				3F64FB4F25A790BE00898DEC /* HomeViewController.swift */,
+				3F64FB5225A7918F00898DEC /* FidgetToolViewController.swift */,
+				3F64FB5525A791AE00898DEC /* EmotionViewController.swift */,
+				3F64FB5825A7921700898DEC /* NotesViewController.swift */,
+				3F64FB5B25A7922E00898DEC /* HomeExtensionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3F64FB4625A78F0900898DEC /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				3F64FB4925A78F1B00898DEC /* calmUkulele.mp3 */,
+				3F64FB4A25A78F3A00898DEC /* clickSound.mp3 */,
+				3F64FB4725A78F0F00898DEC /* switchSound.mp3 */,
+				3F64FB4B25A78F4800898DEC /* crackSoud.mp3 */,
+				3F64FB4825A78F1600898DEC /* chillSong.mp3 */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		3F64FB5E25A7923300898DEC /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		3F64FB5F25A7932300898DEC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3F64FB6025A7937300898DEC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3F7D904523C3C3B3006F9972 = {
+			isa = PBXGroup;
+			children = (
+				3F7D905023C3C3B3006F9972 /* Defuse */,
+				3F7D904F23C3C3B3006F9972 /* Products */,
+				3F7D906723C3EB7D006F9972 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F7D904F23C3C3B3006F9972 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F7D904E23C3C3B3006F9972 /* Defuse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F7D905023C3C3B3006F9972 /* Defuse */ = {
+			isa = PBXGroup;
+			children = (
+				3F64FB5F25A7932300898DEC /* CoreData */,
+				3F64FB4625A78F0900898DEC /* Media */,
+				3F64FB4525A78EFD00898DEC /* Controllers */,
+				3F64FB4425A78EF100898DEC /* Old Controllers */,
+				3F7D907623C68A99006F9972 /* View */,
+				3F7D906A23C3ECEC006F9972 /* switchSound.mp3 */,
+				3F7D907023C6629C006F9972 /* crackSoud.mp3 */,
+				3F7D905123C3C3B3006F9972 /* AppDelegate.swift */,
+				3F7D905323C3C3B3006F9972 /* SceneDelegate.swift */,
+				3F7D905523C3C3B3006F9972 /* ViewController.swift */,
+				3F7D907F23C7D590006F9972 /* calmUkulele.mp3 */,
+				3F7D90EE23C8403B006F9972 /* chillSong.mp3 */,
+				3F7D905723C3C3B3006F9972 /* Main.storyboard */,
+				3F7D906E23C65F58006F9972 /* clickSound.mp3 */,
+				3F7D905A23C3C3B5006F9972 /* Assets.xcassets */,
+				3F7D905C23C3C3B5006F9972 /* LaunchScreen.storyboard */,
+				3F7D905F23C3C3B5006F9972 /* Info.plist */,
+			);
+			path = Defuse;
+			sourceTree = "<group>";
+		};
+		3F7D906723C3EB7D006F9972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F7D906823C3EB7D006F9972 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F7D907623C68A99006F9972 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F7D907723C68ABF006F9972 /* CircleImageView.swift */,
+				3F7D907923C69028006F9972 /* BubbleButton.swift */,
+				3F7D907B23C6A6C4006F9972 /* popishSound.mp3 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F7D904D23C3C3B3006F9972 /* Defuse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F7D906223C3C3B5006F9972 /* Build configuration list for PBXNativeTarget "Defuse" */;
+			buildPhases = (
+				3F7D904A23C3C3B3006F9972 /* Sources */,
+				3F7D904B23C3C3B3006F9972 /* Frameworks */,
+				3F7D904C23C3C3B3006F9972 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Defuse;
+			productName = Defuse;
+			productReference = 3F7D904E23C3C3B3006F9972 /* Defuse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F7D904623C3C3B3006F9972 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Henry Calderon";
+				TargetAttributes = {
+					3F7D904D23C3C3B3006F9972 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 3F7D904923C3C3B3006F9972 /* Build configuration list for PBXProject "Defuse" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F7D904523C3C3B3006F9972;
+			productRefGroup = 3F7D904F23C3C3B3006F9972 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F7D904D23C3C3B3006F9972 /* Defuse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F7D904C23C3C3B3006F9972 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F7D907C23C6A6C4006F9972 /* popishSound.mp3 in Resources */,
+				3F7D908023C7D590006F9972 /* calmUkulele.mp3 in Resources */,
+				3F7D906F23C65F59006F9972 /* clickSound.mp3 in Resources */,
+				3F7D906B23C3ECEC006F9972 /* switchSound.mp3 in Resources */,
+				3F7D905E23C3C3B5006F9972 /* LaunchScreen.storyboard in Resources */,
+				3F7D905B23C3C3B5006F9972 /* Assets.xcassets in Resources */,
+				3F7D90EF23C8403B006F9972 /* chillSong.mp3 in Resources */,
+				3F7D907123C6629C006F9972 /* crackSoud.mp3 in Resources */,
+				3F7D905923C3C3B3006F9972 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F7D904A23C3C3B3006F9972 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F7D907A23C69028006F9972 /* BubbleButton.swift in Sources */,
+				3F7D907823C68ABF006F9972 /* CircleImageView.swift in Sources */,
+				3F7D905623C3C3B3006F9972 /* ViewController.swift in Sources */,
+				3F7D907523C68203006F9972 /* BubbleSubViewController.swift in Sources */,
+				3F64FB5625A791AE00898DEC /* EmotionViewController.swift in Sources */,
+				3F7D907E23C6FB47006F9972 /* AngerViewController.swift in Sources */,
+				3F64FB5C25A7922E00898DEC /* HomeExtensionViewController.swift in Sources */,
+				3F7D905223C3C3B3006F9972 /* AppDelegate.swift in Sources */,
+				3F7D906D23C64F38006F9972 /* AnxietyViewController.swift in Sources */,
+				3F64FB5025A790BE00898DEC /* HomeViewController.swift in Sources */,
+				3F7D905423C3C3B3006F9972 /* SceneDelegate.swift in Sources */,
+				3F64FB5925A7921700898DEC /* NotesViewController.swift in Sources */,
+				3F64FB5325A7918F00898DEC /* FidgetToolViewController.swift in Sources */,
+				3F7D906623C3DBF3006F9972 /* FidgetViewController.swift in Sources */,
+				3F7D907323C67D7B006F9972 /* KeySubViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F7D905723C3C3B3006F9972 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F7D905823C3C3B3006F9972 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F7D905C23C3C3B5006F9972 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F7D905D23C3C3B5006F9972 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F7D906023C3C3B5006F9972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F7D906123C3C3B5006F9972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F7D906323C3C3B5006F9972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VH946FT2M;
+				INFOPLIST_FILE = Defuse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrycalderon.Defuse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3F7D906423C3C3B5006F9972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VH946FT2M;
+				INFOPLIST_FILE = Defuse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrycalderon.Defuse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F7D904923C3C3B3006F9972 /* Build configuration list for PBXProject "Defuse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F7D906023C3C3B5006F9972 /* Debug */,
+				3F7D906123C3C3B5006F9972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F7D906223C3C3B5006F9972 /* Build configuration list for PBXNativeTarget "Defuse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F7D906323C3C3B5006F9972 /* Debug */,
+				3F7D906423C3C3B5006F9972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F7D904623C3C3B3006F9972 /* Project object */;
+}
