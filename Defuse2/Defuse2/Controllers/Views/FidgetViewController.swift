@@ -10,35 +10,97 @@ import AVFoundation
 
 class FidgetViewController: UIViewController {
     
+    //MARK: Objects Used
     let switchOne: UISwitch = {
         let swit = UISwitch()
+        swit.translatesAutoresizingMaskIntoConstraints = false
+        swit.addTarget(self, action: #selector(switchValueChanged), for: .touchUpInside)
         return swit
     }()
     
     let stepOne: UIStepper = {
         let step = UIStepper()
+        step.translatesAutoresizingMaskIntoConstraints = false
+        step.minimumValue = -1500
+        step.maximumValue = 1500
+        step.stepValue = 1
+        step.addTarget(self, action: #selector(useStepperOne), for: .touchUpInside)
         return step
     }()
     
     let sliderOne: UISlider = {
         let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.minimumValue = -255
+        slider.maximumValue = 255
+        slider.value = 0.5
+        slider.addTarget(self, action: #selector(sliderSlide), for: .valueChanged)
         return slider
     }()
     
-    let segmentControl: UISegmentedControl = {
-        let segment = UISegmentedControl()
-        return segment
+    let textField: UITextField = {
+        let text = UITextField()
+        text.translatesAutoresizingMaskIntoConstraints = false
+        text.textAlignment = .center
+        text.text = "Type Whatever"
+        text.font = UIFont(name: "System", size: 16)
+        return text
     }()
     
     let aButton: UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     let aLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let segmentControl: UISegmentedControl = {
+        let segment = UISegmentedControl()
+        segment.translatesAutoresizingMaskIntoConstraints = false
+        segment.insertSegment(withTitle: "Bubbles", at: 0, animated: true)
+        segment.insertSegment(withTitle: "Key", at: 1, animated: true)
+        segment.selectedSegmentIndex = 0
+        return segment
+    }()
+    
+    //MARK: Organiziers
+    let hStackOne: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.alignment = .fill
+        stack.spacing = 30
+        return stack
+    }()
+    
+    let hStackTwo: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.alignment = .fill
+        stack.spacing = 30
+        return stack
+    }()
+    
+    let vStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.alignment = .center
+        stack.spacing = 20
+        return stack
+    }()
+    
+    let BubbleView = UIView()
+    let KeyView = UIView()
     
 //    let keyView = UIView {
 //        let view = UIView()
@@ -58,13 +120,85 @@ class FidgetViewController: UIViewController {
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.title = "Fidget"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         setup()
     }
     
     //MARK: Setup
     func setup(){
+        self.view.addSubview(vStack)
+        self.vStack.addArrangedSubview(hStackOne)
+        self.hStackOne.addArrangedSubview(switchOne)
+        self.hStackOne.addArrangedSubview(stepOne)
+        
+        self.vStack.addArrangedSubview(sliderOne)
+        self.vStack.addArrangedSubview(textField)
+        
+        self.vStack.addArrangedSubview(hStackTwo)
+        self.hStackTwo.addArrangedSubview(aButton)
+        self.hStackTwo.addArrangedSubview(aLabel)
+        
+        self.vStack.addArrangedSubview(segmentControl)
+        
+        NSLayoutConstraint.activate([
+            vStack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40),
+            vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+    }
+    
+    //MARK: Actions
+    @objc func sliderSlide(){
+        let rNum = Int.random(in: 0...255)
+        let gNum = Int.random(in: 0...255)
+        let bNum = Int.random(in: 0...255)
+        self.view.backgroundColor = UIColor(red: CGFloat(Double(rNum)/255.0), green: CGFloat(Double(gNum)/255.0), blue: CGFloat(Double(bNum)/255.0), alpha: 0.7)
+    }
+    
+    @objc func switchValueChanged(){
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        generator.impactOccurred()
+        
+        let path = Bundle.main.path(forResource: "switchSound.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            soundEffect = try AVAudioPlayer(contentsOf: url)
+            soundEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
+    @objc func useStepperOne(){
+        let path = Bundle.main.path(forResource: "clickSound.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            soundEffect = try AVAudioPlayer(contentsOf: url)
+            soundEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
+    @objc func aButtonPressed(){
+        let path = Bundle.main.path(forResource: "crackSoud.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            soundEffect = try AVAudioPlayer(contentsOf: url)
+            soundEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+        let textBit = aLabelWordList[Int.random(in: 0..<aLabelWordList.count)]
+        aLabel.text = textBit
+    }
+    
+    @objc func viewSegmentControlUsed(){
         
     }
 
