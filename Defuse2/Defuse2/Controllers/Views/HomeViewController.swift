@@ -83,6 +83,10 @@ class HomeViewController: UIViewController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     //MARK: Setup
     func setup(){
         self.view.addSubview(titleLabel)

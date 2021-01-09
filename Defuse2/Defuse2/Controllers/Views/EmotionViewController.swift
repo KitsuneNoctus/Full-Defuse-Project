@@ -45,6 +45,10 @@ class EmotionViewController: UIViewController {
         music?.stop()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = true
+//    }
+    
     //MARK: Setup
     func setup(){
         let phraseChosen = phrases.randomElement()
@@ -89,7 +93,8 @@ class EmotionViewController: UIViewController {
     
     //MARK: Create Notes Action
     @objc func createNotes(){
-        print("Creating Note")
+        let nextVC = NewNoteViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
 }

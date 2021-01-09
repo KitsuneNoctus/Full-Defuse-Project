@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3F58E2EF25A92F8E0093F93E /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58E2EE25A92F8E0093F93E /* BubbleView.swift */; };
+		3F58E2F425A9637A0093F93E /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58E2F325A9637A0093F93E /* NewNoteViewController.swift */; };
+		3F58E2F925A963900093F93E /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58E2F825A963900093F93E /* NoteViewController.swift */; };
 		3FCA711525A7C49C00FA1D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA711425A7C49C00FA1D46 /* AppDelegate.swift */; };
 		3FCA711725A7C49C00FA1D46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA711625A7C49C00FA1D46 /* SceneDelegate.swift */; };
-		3FCA711925A7C49C00FA1D46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA711825A7C49C00FA1D46 /* ViewController.swift */; };
 		3FCA711F25A7C49C00FA1D46 /* Defuse2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA711D25A7C49C00FA1D46 /* Defuse2.xcdatamodeld */; };
 		3FCA712125A7C49F00FA1D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA712025A7C49F00FA1D46 /* Assets.xcassets */; };
 		3FCA712425A7C49F00FA1D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA712225A7C49F00FA1D46 /* LaunchScreen.storyboard */; };
@@ -47,10 +48,11 @@
 
 /* Begin PBXFileReference section */
 		3F58E2EE25A92F8E0093F93E /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		3F58E2F325A9637A0093F93E /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		3F58E2F825A963900093F93E /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		3FCA711125A7C49C00FA1D46 /* Defuse2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defuse2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA711425A7C49C00FA1D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FCA711625A7C49C00FA1D46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3FCA711825A7C49C00FA1D46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FCA711E25A7C49C00FA1D46 /* Defuse2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Defuse2.xcdatamodel; sourceTree = "<group>"; };
 		3FCA712025A7C49F00FA1D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FCA712325A7C49F00FA1D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -176,12 +178,13 @@
 			isa = PBXGroup;
 			children = (
 				3FCA717625A7C89900FA1D46 /* HomeViewController.swift */,
-				3FCA711825A7C49C00FA1D46 /* ViewController.swift */,
 				3FCA714E25A7C62600FA1D46 /* SubViews */,
 				3FCA715525A7C69900FA1D46 /* FidgetViewController.swift */,
 				3FCA715A25A7C6B100FA1D46 /* NotesViewController.swift */,
 				3FCA715F25A7C6C500FA1D46 /* EmotionViewController.swift */,
 				3FCA716425A7C6DC00FA1D46 /* HomeExtensionViewController.swift */,
+				3F58E2F325A9637A0093F93E /* NewNoteViewController.swift */,
+				3F58E2F825A963900093F93E /* NoteViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,12 +340,13 @@
 			files = (
 				3F58E2EF25A92F8E0093F93E /* BubbleView.swift in Sources */,
 				3FCA716025A7C6C500FA1D46 /* EmotionViewController.swift in Sources */,
-				3FCA711925A7C49C00FA1D46 /* ViewController.swift in Sources */,
 				3FCA711525A7C49C00FA1D46 /* AppDelegate.swift in Sources */,
+				3F58E2F925A963900093F93E /* NoteViewController.swift in Sources */,
 				3FCA716525A7C6DC00FA1D46 /* HomeExtensionViewController.swift in Sources */,
 				3FCA715B25A7C6B100FA1D46 /* NotesViewController.swift in Sources */,
 				3FCA717725A7C89900FA1D46 /* HomeViewController.swift in Sources */,
 				3FCA711F25A7C49C00FA1D46 /* Defuse2.xcdatamodeld in Sources */,
+				3F58E2F425A9637A0093F93E /* NewNoteViewController.swift in Sources */,
 				3FCA711725A7C49C00FA1D46 /* SceneDelegate.swift in Sources */,
 				3FCA715625A7C69900FA1D46 /* FidgetViewController.swift in Sources */,
 			);
