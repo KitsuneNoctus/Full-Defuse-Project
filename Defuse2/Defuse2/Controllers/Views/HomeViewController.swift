@@ -115,11 +115,15 @@ class HomeViewController: UIViewController {
     
     @objc func navAnger(){
         let nextVC = EmotionViewController()
+        nextVC.emotionTitle = "Anger"
+        nextVC.song = "calmUkulele.mp3"
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc func navAnxiety(){
         let nextVC = EmotionViewController()
+        nextVC.emotionTitle = "Anxiety"
+        nextVC.song = "chillSong.mp3"
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

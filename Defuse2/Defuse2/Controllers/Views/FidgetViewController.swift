@@ -150,8 +150,8 @@ class FidgetViewController: UIViewController {
         
         self.vStack.addArrangedSubview(segmentControl)
         
-        self.view.addSubview(bubbleView)
-        bubbleView.backgroundColor = .purple
+//        self.view.addSubview(bubbleView)
+//        bubbleView.backgroundColor = .purple
         
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 40),
@@ -161,8 +161,11 @@ class FidgetViewController: UIViewController {
             
 //            BubbleView.heightAnchor.constraint(equalToConstant: 100),
 //            BubbleView.widthAnchor.constraint(equalToConstant: 100),
-            bubbleView.topAnchor.constraint(equalTo: self.vStack.bottomAnchor, constant: 20)
         ])
+        
+//        bubbleView.constraints.
+//        bubbleView.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 20).isActive = true
+//        bubbleView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
     }
     
     //MARK: Actions

@@ -14,6 +14,8 @@ class BubbleView: UIView {
     let bubbleButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+//        button.imageEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: , right: )
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -21,6 +23,7 @@ class BubbleView: UIView {
     let bubbleButton2: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -28,6 +31,7 @@ class BubbleView: UIView {
     let bubbleButton3: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -35,6 +39,7 @@ class BubbleView: UIView {
     let bubbleButton4: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -42,6 +47,7 @@ class BubbleView: UIView {
     let bubbleButton5: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -49,6 +55,7 @@ class BubbleView: UIView {
     let bubbleButton6: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -56,6 +63,7 @@ class BubbleView: UIView {
     let bubbleButton7: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -63,6 +71,7 @@ class BubbleView: UIView {
     let bubbleButton8: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -70,6 +79,7 @@ class BubbleView: UIView {
     let bubbleButton9: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -126,17 +136,17 @@ class BubbleView: UIView {
         vStack.addArrangedSubview(hStackTwo)
         vStack.addArrangedSubview(hStackThree)
         
-        hStackOne.addArrangedSubview(bubbleButton)
-        hStackOne.addArrangedSubview(bubbleButton2)
-        hStackOne.addArrangedSubview(bubbleButton3)
-        
-        hStackTwo.addArrangedSubview(bubbleButton4)
-        hStackTwo.addArrangedSubview(bubbleButton5)
-        hStackTwo.addArrangedSubview(bubbleButton6)
-        
-        hStackThree.addArrangedSubview(bubbleButton7)
-        hStackThree.addArrangedSubview(bubbleButton8)
-        hStackThree.addArrangedSubview(bubbleButton9)
+//        hStackOne.addArrangedSubview(bubbleButton)
+//        hStackOne.addArrangedSubview(bubbleButton2)
+//        hStackOne.addArrangedSubview(bubbleButton3)
+//        
+//        hStackTwo.addArrangedSubview(bubbleButton4)
+//        hStackTwo.addArrangedSubview(bubbleButton5)
+//        hStackTwo.addArrangedSubview(bubbleButton6)
+//        
+//        hStackThree.addArrangedSubview(bubbleButton7)
+//        hStackThree.addArrangedSubview(bubbleButton8)
+//        hStackThree.addArrangedSubview(bubbleButton9)
         
         NSLayoutConstraint.activate([
             vStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
