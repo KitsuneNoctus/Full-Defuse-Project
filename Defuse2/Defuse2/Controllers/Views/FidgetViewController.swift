@@ -50,12 +50,18 @@ class FidgetViewController: UIViewController {
     let aButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("{[A]}", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(aButtonPressed), for: .touchUpInside)
+//        button.tintColor = .systemBlue
         return button
     }()
     
     let aLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+//        label.font
+        label.text = "Poetry"
         return label
     }()
     
@@ -96,10 +102,11 @@ class FidgetViewController: UIViewController {
         stack.distribution = .fillEqually
         stack.alignment = .center
         stack.spacing = 20
+//        stack.widthAnchor = 100
         return stack
     }()
     
-    let BubbleView = UIView()
+    let bubbleView = BubbleView()
     let KeyView = UIView()
     
 //    let keyView = UIView {
@@ -123,6 +130,7 @@ class FidgetViewController: UIViewController {
         self.view.backgroundColor = .white
         self.title = "Fidget"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.isHidden = false
         setup()
     }
     
@@ -142,9 +150,18 @@ class FidgetViewController: UIViewController {
         
         self.vStack.addArrangedSubview(segmentControl)
         
+        self.view.addSubview(bubbleView)
+        bubbleView.backgroundColor = .purple
+        
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40),
-            vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            vStack.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            vStack.widthAnchor.constraint(equalToConstant: 350),
+            vStack.heightAnchor.constraint(equalToConstant: 400),
+            
+//            BubbleView.heightAnchor.constraint(equalToConstant: 100),
+//            BubbleView.widthAnchor.constraint(equalToConstant: 100),
+            bubbleView.topAnchor.constraint(equalTo: self.vStack.bottomAnchor, constant: 20)
         ])
     }
     
