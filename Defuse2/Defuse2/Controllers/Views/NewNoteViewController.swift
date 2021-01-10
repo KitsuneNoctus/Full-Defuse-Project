@@ -10,6 +10,10 @@ import CoreData
 
 class NewNoteViewController: UIViewController {
     
+    var coreDataStack = CoreDataStack()
+    var note: Note?
+    
+    //MARK: Items
     let promptLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +40,7 @@ class NewNoteViewController: UIViewController {
         self.view.backgroundColor = .white
         self.title = "New Note"
         self.navigationController?.navigationBar.isHidden = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(save))
         setup()
     }
     
@@ -61,8 +66,23 @@ class NewNoteViewController: UIViewController {
     }
     
     //MARK: Core Data Save
-    func save(){
-        
+    @objc func save(){
+        if note == nil{
+            let newNote = Note(context: coreDataStack.managedContext)
+            newNote.title = titleField.text
+            newNote.body = bodyField.text
+            if promptLabel.text == "New Note"{
+                newNote.prompt = "Note"
+            }else{
+                newNote.prompt = promptLabel.text
+            }
+            coreDataStack.saveContext()
+        }else{
+            note?.title = titleField.text
+            note?.body = bodyField.text
+            coreDataStack.saveContext()
+        }
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

@@ -10,6 +10,8 @@ import CoreData
 
 class NotesViewController: UIViewController {
     
+    var coreDataStack = CoreDataStack()
+    
     let tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +26,7 @@ class NotesViewController: UIViewController {
         self.view.backgroundColor = .white
         self.title = "Notes"
 //        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = editButtonItem
         self.navigationController?.navigationBar.isHidden = false
         setup()
     }
