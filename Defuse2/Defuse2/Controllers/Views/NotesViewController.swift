@@ -78,10 +78,18 @@ class NotesViewController: UIViewController {
         ])
     }
     
-//    func configure(cell: UITableViewCell, for indexPath: IndexPath){
-//        guard cell is UITableViewCell else { return }
-//        
-//    }
+    //MARK: Show Editing
+    @objc func showEditing(sender: UIBarButtonItem){
+        if(self.tableView.isEditing == true){
+            self.tableView.isEditing = false
+            self.navigationItem.rightBarButtonItem?.title = "Edit"
+        }
+        else
+        {
+            self.tableView.isEditing = true
+            self.navigationItem.rightBarButtonItem?.title = "Done"
+        }
+    }
 
 }
 
@@ -115,9 +123,6 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
         if tableView.isEditing == true{
             let note = fetchedResultsController.object(at: indexPath)
             let NewVC = NewNoteViewController()
-//            NewVC.
-//            addVC.coreDataStack = coreDataStack
-//            addVC.project = project
             self.navigationController?.pushViewController(NewVC, animated: true)
         }else{
             let cell = tableView.cellForRow(at: indexPath)
@@ -126,9 +131,6 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
             vc.prompt = project.prompt ?? "Prompt"
             vc.titleName = project.title ?? "Note"
             vc.body = project.body
-//            vc.coreDataStack = coreDataStack
-//            vc.projectTitle = cell.projectTitle.text ?? ""
-//            vc.theProject = project
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -172,7 +174,8 @@ extension NotesViewController: NSFetchedResultsControllerDelegate{
         tableView.deleteRows(at: [indexPath!], with: .automatic)
       case .update:
         let cell = tableView.cellForRow(at: indexPath!)!
-//        configure(cell: cell, for: indexPath!)
+        let note = fetchedResultsController.object(at: indexPath!)
+        cell.textLabel?.text = note.title
       case .move:
         tableView.deleteRows(at: [indexPath!], with: .automatic)
         tableView.insertRows(at: [newIndexPath!], with: .automatic)
