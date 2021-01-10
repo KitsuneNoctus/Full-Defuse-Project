@@ -31,9 +31,11 @@ class FidgetViewController: UIViewController {
     let sliderOne: UISlider = {
         let slider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.minimumValue = -255
+        slider.minimumValue = 0
         slider.maximumValue = 255
-        slider.value = 0.5
+        slider.value = 1
+        slider.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        slider.isContinuous = true
         slider.addTarget(self, action: #selector(sliderSlide), for: .valueChanged)
         return slider
     }()
@@ -173,7 +175,8 @@ class FidgetViewController: UIViewController {
         let rNum = Int.random(in: 0...255)
         let gNum = Int.random(in: 0...255)
         let bNum = Int.random(in: 0...255)
-        self.view.backgroundColor = UIColor(red: CGFloat(Double(rNum)/255.0), green: CGFloat(Double(gNum)/255.0), blue: CGFloat(Double(bNum)/255.0), alpha: 0.7)
+        self.view.backgroundColor = UIColor(red: CGFloat(sliderOne.value/255.0), green: CGFloat(sliderOne.value/255.0), blue: CGFloat(sliderOne.value/255.0), alpha: 0.7)
+        
     }
     
     @objc func switchValueChanged(){
