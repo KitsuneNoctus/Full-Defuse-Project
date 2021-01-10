@@ -10,6 +10,8 @@ import AVFoundation
 
 class FidgetViewController: UIViewController {
     
+    var backgroundColours = [UIColor(red:0.79, green:0.96, blue:0.80, alpha:1.0), UIColor(red:0.82, green:0.69, blue:0.97, alpha:1.0), UIColor(red:0.75, green:0.94, blue:0.98, alpha:1.0), UIColor(red:0.95, green:0.95, blue:0.87, alpha:1.0), UIColor(red:0.97, green:0.87, blue:0.90, alpha:1.0)]
+    
     //MARK: Objects Used
     let switchOne: UISwitch = {
         let swit = UISwitch()
@@ -32,10 +34,10 @@ class FidgetViewController: UIViewController {
         let slider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.minimumValue = 0
-        slider.maximumValue = 255
-        slider.value = 1
+        slider.maximumValue = 6
+        slider.value = 0
         slider.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        slider.isContinuous = true
+//        slider.isContinuous = true
         slider.addTarget(self, action: #selector(sliderSlide), for: .valueChanged)
         return slider
     }()
@@ -81,9 +83,9 @@ class FidgetViewController: UIViewController {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.distribution = .fillEqually
-        stack.alignment = .fill
-        stack.spacing = 30
+        stack.distribution = .fillProportionally
+        stack.alignment = .center
+//        stack.spacing = 30
         return stack
     }()
     
@@ -101,25 +103,15 @@ class FidgetViewController: UIViewController {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.distribution = .fillEqually
+        stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 20
+        stack.spacing = 10
 //        stack.widthAnchor = 100
         return stack
     }()
     
     let bubbleView = BubbleView()
     let KeyView = UIView()
-    
-//    let keyView = UIView {
-//        let view = UIView()
-//        return view
-//    }()
-//
-//    let bubbleView = UIView {
-//        let view = UIView()
-//        return view
-//    }()
     
     let aLabelWordList = ["They're","There","Their","your","you're","bear","bare","angle","angel"]
     
@@ -139,6 +131,8 @@ class FidgetViewController: UIViewController {
     //MARK: Setup
     func setup(){
         self.view.addSubview(vStack)
+//        self.view.addSubview(bubbleView)
+        
         self.vStack.addArrangedSubview(hStackOne)
         self.hStackOne.addArrangedSubview(switchOne)
         self.hStackOne.addArrangedSubview(stepOne)
@@ -152,7 +146,6 @@ class FidgetViewController: UIViewController {
         
         self.vStack.addArrangedSubview(segmentControl)
         
-//        self.view.addSubview(bubbleView)
 //        bubbleView.backgroundColor = .purple
         
         NSLayoutConstraint.activate([
@@ -160,23 +153,45 @@ class FidgetViewController: UIViewController {
             vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             vStack.widthAnchor.constraint(equalToConstant: 350),
             vStack.heightAnchor.constraint(equalToConstant: 400),
-            
-//            BubbleView.heightAnchor.constraint(equalToConstant: 100),
-//            BubbleView.widthAnchor.constraint(equalToConstant: 100),
+            hStackOne.widthAnchor.constraint(equalTo: self.vStack.widthAnchor),
+//            bubbleView.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 10),
+//            bubbleView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
         
-//        bubbleView.constraints.
-//        bubbleView.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 20).isActive = true
-//        bubbleView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
     }
     
     //MARK: Actions
     @objc func sliderSlide(){
-        let rNum = Int.random(in: 0...255)
-        let gNum = Int.random(in: 0...255)
-        let bNum = Int.random(in: 0...255)
-        self.view.backgroundColor = UIColor(red: CGFloat(sliderOne.value/255.0), green: CGFloat(sliderOne.value/255.0), blue: CGFloat(sliderOne.value/255.0), alpha: 0.7)
-        
+        if sliderOne.value > 0 && sliderOne.value < 1{
+            UIView.animate(withDuration: 1, delay:0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.view.backgroundColor = UIColor.white
+            })
+        }else if sliderOne.value > 1 && sliderOne.value < 2{
+            UIView.animate(withDuration: 1, delay:0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.view.backgroundColor = UIColor.yellow
+            })
+        }else if sliderOne.value > 2 && sliderOne.value < 3{
+            UIView.animate(withDuration: 1, delay:0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.view.backgroundColor = UIColor.green
+            })
+        }else if sliderOne.value > 3 && sliderOne.value < 4{
+            UIView.animate(withDuration: 1, delay:0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.view.backgroundColor = UIColor.blue
+            })
+        }else if sliderOne.value > 4 && sliderOne.value < 5{
+            UIView.animate(withDuration: 1, delay:0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.view.backgroundColor = UIColor.purple
+            })
+        }else if sliderOne.value > 5 && sliderOne.value < 6{
+            UIView.animate(withDuration: 1, delay:0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.view.backgroundColor = UIColor.red
+            })
+        }else if sliderOne.value > 6{
+            UIView.animate(withDuration: 1, delay:0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.view.backgroundColor = UIColor.orange
+            })
+        }
+    
     }
     
     @objc func switchValueChanged(){
