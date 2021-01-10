@@ -20,6 +20,24 @@ class NotesViewController: UIViewController {
         return table
     }()
     
+    //MARK: Fetch Controller
+    lazy var fetchedResultsController: NSFetchedResultsController<Note> = {
+
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        
+        fetchRequest.sortDescriptors = []
+
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: coreDataStack.managedContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+
+        fetchedResultsController.delegate = self
+
+        return fetchedResultsController
+    }()
+    
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +47,22 @@ class NotesViewController: UIViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         self.navigationController?.navigationBar.isHidden = false
         setup()
+        fetchResults()
+    }
+    
+    //MARK: View Will Appear
+    override func viewWillAppear(_ animated: Bool) {
+        fetchResults()
+        tableView.reloadData()
+    }
+    
+    //MARK: Fetch Results
+    func fetchResults(){
+        do {
+          try fetchedResultsController.performFetch()
+        } catch {
+          print(error)
+        }
     }
     
     //MARK: Setup
@@ -43,29 +77,109 @@ class NotesViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
+    
+//    func configure(cell: UITableViewCell, for indexPath: IndexPath){
+//        guard cell is UITableViewCell else { return }
+//        
+//    }
 
 }
 
-//MARK: Extension
+//MARK: Extension - Table View Delegate & Data Source
 extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+    /// Number of Sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+      //sections
+      return fetchedResultsController.sections?.count ?? 0
     }
     
+    ///Number of Rows in Section
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let sectionInfo =
+            fetchedResultsController.sections?[section] else {
+                return 0
+        }
+        return sectionInfo.numberOfObjects
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Cell: \(indexPath)"
+        let note = fetchedResultsController.object(at: indexPath)
+        cell.textLabel?.text = note.title
         return cell
     }
     
     //MARK: Did select row at
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = NoteViewController()
-        vc.titleName = "Note: \(indexPath.row)"
-        vc.prompt = "Prompt: \(indexPath.row + 1)"
-        navigationController?.pushViewController(vc, animated: true)
+        if tableView.isEditing == true{
+            let note = fetchedResultsController.object(at: indexPath)
+            let NewVC = NewNoteViewController()
+//            NewVC.
+//            addVC.coreDataStack = coreDataStack
+//            addVC.project = project
+            self.navigationController?.pushViewController(NewVC, animated: true)
+        }else{
+            let cell = tableView.cellForRow(at: indexPath)
+            let vc = NoteViewController()
+            let project = fetchedResultsController.object(at: indexPath)
+            vc.prompt = project.prompt ?? "Prompt"
+            vc.titleName = project.title ?? "Note"
+            vc.body = project.body
+//            vc.coreDataStack = coreDataStack
+//            vc.projectTitle = cell.projectTitle.text ?? ""
+//            vc.theProject = project
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    ///- -------------------------------
+    private func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+          return true
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool){
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            coreDataStack.managedContext.delete(fetchedResultsController.object(at: indexPath))
+            coreDataStack.saveContext()
+        }
     }
     
     
+}
+
+//MARK: Extension - Fetch Results Delegate
+extension NotesViewController: NSFetchedResultsControllerDelegate{
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+      tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+      
+      switch type {
+      case .insert:
+        tableView.insertRows(at: [newIndexPath!], with: .automatic)
+      case .delete:
+        tableView.deleteRows(at: [indexPath!], with: .automatic)
+      case .update:
+        let cell = tableView.cellForRow(at: indexPath!)!
+//        configure(cell: cell, for: indexPath!)
+      case .move:
+        tableView.deleteRows(at: [indexPath!], with: .automatic)
+        tableView.insertRows(at: [newIndexPath!], with: .automatic)
+      }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+      tableView.endUpdates()
+    }
 }

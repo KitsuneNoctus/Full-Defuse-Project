@@ -11,6 +11,7 @@ class NoteViewController: UIViewController {
     
     var titleName = "Note"
     var prompt = "Prompt"
+    var body: String?
     
     let promptLabel: UILabel = {
         let label = UILabel()
@@ -36,6 +37,11 @@ class NoteViewController: UIViewController {
         self.view.addSubview(promptLabel)
         promptLabel.text = prompt
         self.view.addSubview(textView)
+        if let body = body{
+            textView.text = body
+        }else{
+            textView.text = "-Empty-"
+        }
         
         NSLayoutConstraint.activate([
             promptLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
