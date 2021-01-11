@@ -15,7 +15,8 @@ class BubbleView: UIView {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-//        button.imageEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: , right: )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
     }()
@@ -23,6 +24,8 @@ class BubbleView: UIView {
     let bubbleButton2: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -31,6 +34,8 @@ class BubbleView: UIView {
     let bubbleButton3: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -39,6 +44,8 @@ class BubbleView: UIView {
     let bubbleButton4: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -47,6 +54,8 @@ class BubbleView: UIView {
     let bubbleButton5: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -55,6 +64,8 @@ class BubbleView: UIView {
     let bubbleButton6: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -63,6 +74,8 @@ class BubbleView: UIView {
     let bubbleButton7: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -71,6 +84,8 @@ class BubbleView: UIView {
     let bubbleButton8: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -79,6 +94,8 @@ class BubbleView: UIView {
     let bubbleButton9: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "theBubbleImage"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(buttonSound), for: .touchUpInside)
         return button
@@ -129,6 +146,7 @@ class BubbleView: UIView {
     //MARK: Init
     override init(frame: CGRect){
         super.init(frame: frame)
+        self.backgroundColor = .purple
         self.frame.size.height = 300
         self.frame.size.width = 300
         self.addSubview(vStack)
@@ -136,21 +154,42 @@ class BubbleView: UIView {
         vStack.addArrangedSubview(hStackTwo)
         vStack.addArrangedSubview(hStackThree)
         
-//        hStackOne.addArrangedSubview(bubbleButton)
-//        hStackOne.addArrangedSubview(bubbleButton2)
-//        hStackOne.addArrangedSubview(bubbleButton3)
-//        
-//        hStackTwo.addArrangedSubview(bubbleButton4)
-//        hStackTwo.addArrangedSubview(bubbleButton5)
-//        hStackTwo.addArrangedSubview(bubbleButton6)
-//        
-//        hStackThree.addArrangedSubview(bubbleButton7)
-//        hStackThree.addArrangedSubview(bubbleButton8)
-//        hStackThree.addArrangedSubview(bubbleButton9)
+        hStackOne.addArrangedSubview(bubbleButton)
+        hStackOne.addArrangedSubview(bubbleButton2)
+        hStackOne.addArrangedSubview(bubbleButton3)
+        
+        hStackTwo.addArrangedSubview(bubbleButton4)
+        hStackTwo.addArrangedSubview(bubbleButton5)
+        hStackTwo.addArrangedSubview(bubbleButton6)
+        
+        hStackThree.addArrangedSubview(bubbleButton7)
+        hStackThree.addArrangedSubview(bubbleButton8)
+        hStackThree.addArrangedSubview(bubbleButton9)
         
         NSLayoutConstraint.activate([
             vStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            vStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            vStack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            vStack.heightAnchor.constraint(equalTo: self.heightAnchor),
+            
+            
+            bubbleButton.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton2.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton3.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton4.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton5.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton6.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton7.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton8.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton9.heightAnchor.constraint(equalToConstant: 30),
+            bubbleButton.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton2.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton3.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton4.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton5.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton6.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton7.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton8.widthAnchor.constraint(equalToConstant: 30),
+            bubbleButton9.widthAnchor.constraint(equalToConstant: 30),
         ])
     }
     

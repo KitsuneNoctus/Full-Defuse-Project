@@ -85,7 +85,7 @@ class FidgetViewController: UIViewController {
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         stack.alignment = .center
-//        stack.spacing = 30
+        stack.spacing = 30
         return stack
     }()
     
@@ -146,14 +146,18 @@ class FidgetViewController: UIViewController {
         
         self.vStack.addArrangedSubview(segmentControl)
         
+        self.vStack.addArrangedSubview(bubbleView)
+        
 //        bubbleView.backgroundColor = .purple
         
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 40),
             vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            vStack.widthAnchor.constraint(equalToConstant: 350),
-            vStack.heightAnchor.constraint(equalToConstant: 400),
-            hStackOne.widthAnchor.constraint(equalTo: self.vStack.widthAnchor),
+//            vStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 20)
+//            vStack.widthAnchor.constraint(equalToConstant: 350),
+//            vStack.heightAnchor.constraint(equalToConstant: 400),
+//            hStackOne.widthAnchor.constraint(equalTo: self.vStack.widthAnchor),
+            
 //            bubbleView.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 10),
 //            bubbleView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
