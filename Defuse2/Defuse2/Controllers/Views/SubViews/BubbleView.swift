@@ -143,6 +143,9 @@ class BubbleView: UIView {
         return stack
     }()
     
+    //MARK: Sound Effects
+    var soundEffect: AVAudioPlayer?
+    
     //MARK: Init
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -166,6 +169,7 @@ class BubbleView: UIView {
         hStackThree.addArrangedSubview(bubbleButton8)
         hStackThree.addArrangedSubview(bubbleButton9)
         
+        //MARK: Constraints
         NSLayoutConstraint.activate([
             vStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             vStack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -205,7 +209,15 @@ class BubbleView: UIView {
     
     //MARK: Action
     @objc func buttonSound(){
-        print("Pop")
+        let path = Bundle.main.path(forResource: "food_candy_bubblegum_blow_bubble_pop.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            soundEffect = try AVAudioPlayer(contentsOf: url)
+            soundEffect?.play()
+        } catch {
+            print("Pop")
+        }
     }
     
 }
