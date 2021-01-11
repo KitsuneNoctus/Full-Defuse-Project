@@ -132,7 +132,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func navMore(){
-        let nextVC = EmotionViewController()
+        let nextVC = HomeExtensionViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
