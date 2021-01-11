@@ -10,6 +10,8 @@ import CoreData
 
 class NewNoteViewController: UIViewController {
     
+    let prompts = ["What has caused you to feel this way?","Think of one time that you felt happy.","How would you talk about this with someone?","Talk to yourself, what would you say if you say yourself like this?","What do you want?","Write a Song","What's the worst joke you have heard?","Tell me about your favorite show.","Descirbe the color blue."]
+    
     var coreDataStack = CoreDataStack()
     var note: Note?
     
@@ -18,6 +20,7 @@ class NewNoteViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "New Note"
+        label.numberOfLines = 2
         return label
     }()
     
@@ -31,6 +34,7 @@ class NewNoteViewController: UIViewController {
     let bodyField: UITextView = {
         let text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
+        text.text = "Enter Note Here..."
         return text
     }()
 
@@ -46,6 +50,7 @@ class NewNoteViewController: UIViewController {
     
     //MARK: Setup
     func setup(){
+        promptLabel.text = prompts.randomElement()
         self.view.addSubview(promptLabel)
         self.view.addSubview(titleField)
         self.view.addSubview(bodyField)
