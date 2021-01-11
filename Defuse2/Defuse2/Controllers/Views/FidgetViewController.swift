@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+//Sound from Zapsplat.com
 
 class FidgetViewController: UIViewController {
     
@@ -48,6 +49,7 @@ class FidgetViewController: UIViewController {
         text.textAlignment = .center
         text.text = "Type Whatever"
         text.font = UIFont(name: "System", size: 16)
+        text.returnKeyType = .done
         return text
     }()
     
@@ -75,6 +77,7 @@ class FidgetViewController: UIViewController {
         segment.insertSegment(withTitle: "Bubbles", at: 0, animated: true)
         segment.insertSegment(withTitle: "Key", at: 1, animated: true)
         segment.selectedSegmentIndex = 0
+        segment.addTarget(self, action: #selector(viewSegmentControlUsed), for: .touchUpInside)
         return segment
     }()
     
@@ -85,7 +88,7 @@ class FidgetViewController: UIViewController {
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         stack.alignment = .center
-//        stack.spacing = 30
+        stack.spacing = 30
         return stack
     }()
     
@@ -146,14 +149,18 @@ class FidgetViewController: UIViewController {
         
         self.vStack.addArrangedSubview(segmentControl)
         
+        self.vStack.addArrangedSubview(bubbleView)
+        
 //        bubbleView.backgroundColor = .purple
         
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 40),
             vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            vStack.widthAnchor.constraint(equalToConstant: 350),
-            vStack.heightAnchor.constraint(equalToConstant: 400),
-            hStackOne.widthAnchor.constraint(equalTo: self.vStack.widthAnchor),
+//            vStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 20)
+//            vStack.widthAnchor.constraint(equalToConstant: 350),
+//            vStack.heightAnchor.constraint(equalToConstant: 400),
+//            hStackOne.widthAnchor.constraint(equalTo: self.vStack.widthAnchor),
+            
 //            bubbleView.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 10),
 //            bubbleView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
@@ -237,7 +244,19 @@ class FidgetViewController: UIViewController {
     }
     
     @objc func viewSegmentControlUsed(){
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        generator.impactOccurred()
         
+        let path = Bundle.main.path(forResource: "household_book_put_down_001.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            soundEffect = try AVAudioPlayer(contentsOf: url)
+            soundEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
     }
 
     

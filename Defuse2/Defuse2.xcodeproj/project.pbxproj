@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F41E85A25AD0168008E5B73 /* food_candy_bubblegum_blow_bubble_pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F41E85925AD0168008E5B73 /* food_candy_bubblegum_blow_bubble_pop.mp3 */; };
+		3F41E85F25AD0303008E5B73 /* household_book_put_down_001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F41E85E25AD0303008E5B73 /* household_book_put_down_001.mp3 */; };
 		3F58E2EF25A92F8E0093F93E /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58E2EE25A92F8E0093F93E /* BubbleView.swift */; };
 		3F58E2F425A9637A0093F93E /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58E2F325A9637A0093F93E /* NewNoteViewController.swift */; };
 		3F58E2F925A963900093F93E /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58E2F825A963900093F93E /* NoteViewController.swift */; };
 		3F7D78C625AA73B80022E038 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D78C525AA73B80022E038 /* CoreDataStack.swift */; };
 		3F7D78CF25AA74180022E038 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D78CD25AA74180022E038 /* Note+CoreDataClass.swift */; };
 		3F7D78D025AA74180022E038 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D78CE25AA74180022E038 /* Note+CoreDataProperties.swift */; };
+		3F89160625AC11C000FB472D /* ARLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89160425AC11C000FB472D /* ARLaunchViewController.swift */; };
+		3F89160725AC11C000FB472D /* ARLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F89160525AC11C000FB472D /* ARLaunchViewController.xib */; };
 		3FCA711525A7C49C00FA1D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA711425A7C49C00FA1D46 /* AppDelegate.swift */; };
 		3FCA711725A7C49C00FA1D46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA711625A7C49C00FA1D46 /* SceneDelegate.swift */; };
 		3FCA711F25A7C49C00FA1D46 /* Defuse2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA711D25A7C49C00FA1D46 /* Defuse2.xcdatamodeld */; };
@@ -50,12 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F41E85925AD0168008E5B73 /* food_candy_bubblegum_blow_bubble_pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = food_candy_bubblegum_blow_bubble_pop.mp3; sourceTree = "<group>"; };
+		3F41E85E25AD0303008E5B73 /* household_book_put_down_001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = household_book_put_down_001.mp3; sourceTree = "<group>"; };
 		3F58E2EE25A92F8E0093F93E /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		3F58E2F325A9637A0093F93E /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		3F58E2F825A963900093F93E /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		3F7D78C525AA73B80022E038 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		3F7D78CD25AA74180022E038 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3F7D78CE25AA74180022E038 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3F89160425AC11C000FB472D /* ARLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLaunchViewController.swift; sourceTree = "<group>"; };
+		3F89160525AC11C000FB472D /* ARLaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARLaunchViewController.xib; sourceTree = "<group>"; };
 		3FCA711125A7C49C00FA1D46 /* Defuse2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defuse2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA711425A7C49C00FA1D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FCA711625A7C49C00FA1D46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +125,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		3F89160325AC119D00FB472D /* ARSection */ = {
+			isa = PBXGroup;
+			children = (
+				3F89160425AC11C000FB472D /* ARLaunchViewController.swift */,
+				3F89160525AC11C000FB472D /* ARLaunchViewController.xib */,
+			);
+			path = ARSection;
+			sourceTree = "<group>";
+		};
 		3FCA710825A7C49C00FA1D46 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +190,8 @@
 		3FCA714A25A7C61100FA1D46 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				3F41E85E25AD0303008E5B73 /* household_book_put_down_001.mp3 */,
+				3F41E85925AD0168008E5B73 /* food_candy_bubblegum_blow_bubble_pop.mp3 */,
 				3FCA716A25A7C77700FA1D46 /* calmUkulele.mp3 */,
 				3FCA716C25A7C77800FA1D46 /* chillSong.mp3 */,
 				3FCA716D25A7C77800FA1D46 /* clickSound.mp3 */,
@@ -185,6 +204,7 @@
 		3FCA714B25A7C61600FA1D46 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F89160325AC119D00FB472D /* ARSection */,
 				3FCA714D25A7C62100FA1D46 /* Cells */,
 				3FCA714C25A7C61C00FA1D46 /* Views */,
 			);
@@ -324,13 +344,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F89160725AC11C000FB472D /* ARLaunchViewController.xib in Resources */,
 				3FCA716E25A7C77800FA1D46 /* switchSound.mp3 in Resources */,
 				3FCA716F25A7C77800FA1D46 /* calmUkulele.mp3 in Resources */,
+				3F41E85F25AD0303008E5B73 /* household_book_put_down_001.mp3 in Resources */,
 				3FCA712425A7C49F00FA1D46 /* LaunchScreen.storyboard in Resources */,
 				3FCA717225A7C77800FA1D46 /* clickSound.mp3 in Resources */,
 				3FCA712125A7C49F00FA1D46 /* Assets.xcassets in Resources */,
 				3FCA717125A7C77800FA1D46 /* chillSong.mp3 in Resources */,
 				3FCA717025A7C77800FA1D46 /* crackSoud.mp3 in Resources */,
+				3F41E85A25AD0168008E5B73 /* food_candy_bubblegum_blow_bubble_pop.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +381,7 @@
 				3F58E2EF25A92F8E0093F93E /* BubbleView.swift in Sources */,
 				3F7D78D025AA74180022E038 /* Note+CoreDataProperties.swift in Sources */,
 				3FCA716025A7C6C500FA1D46 /* EmotionViewController.swift in Sources */,
+				3F89160625AC11C000FB472D /* ARLaunchViewController.swift in Sources */,
 				3FCA711525A7C49C00FA1D46 /* AppDelegate.swift in Sources */,
 				3F7D78C625AA73B80022E038 /* CoreDataStack.swift in Sources */,
 				3F58E2F925A963900093F93E /* NoteViewController.swift in Sources */,
