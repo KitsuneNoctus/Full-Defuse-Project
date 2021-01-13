@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class NewNoteViewController: UIViewController {
+    var emotion: String = "Default"
     
     let prompts = ["What has caused you to feel this way?","Think of one time that you felt happy.","How would you talk about this with someone?","Talk to yourself, what would you say if you say yourself like this?","What do you want?","Write a Song","What's the worst joke you have heard?","Tell me about your favorite show.","Descirbe the color blue."]
     
@@ -50,7 +51,13 @@ class NewNoteViewController: UIViewController {
     
     //MARK: Setup
     func setup(){
-        promptLabel.text = prompts.randomElement()
+        if emotion == "Default"{
+            promptLabel.text = prompts.randomElement()
+        }else if emotion == "Anger"{
+            promptLabel.text = "What has drawn you towards anger?"
+        }else if emotion == "Anxiety"{
+            promptLabel.text = "Trace your steps to what has led you here."
+        }
         self.view.addSubview(promptLabel)
         self.view.addSubview(titleField)
         self.view.addSubview(bodyField)
